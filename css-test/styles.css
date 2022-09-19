@@ -1,0 +1,153 @@
+body {
+	background-color: #000000;
+	font-family:  "Iosevka Web";
+}
+
+header {
+	padding: 20px;
+	border-radius: 10px;
+	position: sticky;
+}
+
+nav {
+	display: flex;
+	align-items: flex-start;
+}
+@keyframes flashing {
+	from {
+		background-color: #AACCAA;
+	}
+	to {
+		background-color: #AAAACC;
+	}
+}
+
+.flashing {
+	animation-name: flashing;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.5,0,0,1);
+	/* animation-delay: 2s; */
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes epileptic {
+	0% {
+		background-image: linear-gradient(135deg, #564231 20%, #932818 80%);
+		border-color: #564231;
+	}
+	25% {
+		background-image: linear-gradient(180deg, #932818 10%, #F8C8D8 100%);
+		border-color: #932818;
+	}
+	100% {
+		background-image: linear-gradient(135deg, #F8C8D8, #932818, #564231);
+		border-color: #F8C8D8;
+	}
+}
+
+.epileptic {
+	animation-name: epileptic;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(.61,.14,1,1.91);
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+.chocolate {
+	border-width: 10px;
+	border-style: inset;
+}
+
+#title {
+	margin: 20px;
+}
+
+#subtitle {
+}
+
+#home {
+	width: 16px;
+	height: 16px;
+	margin: 0px 20px 0px auto;
+	background: url("img/button UI.png") -64px 0;
+}
+
+#home:hover {
+	background: url("img/button UI.png") -64px -144px;
+	transform: scale(2);
+}
+
+main {
+	height: 250px;
+	width: max(80%, 250px);
+	margin: 20px auto;
+	/* background-image: linear-gradient(135deg, #564231, #932818); */
+}
+
+@keyframes loading {
+	0% {
+		transform: none;
+		background-color: #FFFFFF;
+	}
+	50% {
+		transform: rotate3d(1,0.5,0.5,180deg) scale(2);
+		background-color: #DDDDDD;
+	}
+	100%{
+		transform: none;
+		background-color: #BBBBBB;
+	}
+}
+
+#loading {
+	animation-name: loading;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	backface-visibility: visible;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	margin: 50px;
+}
+
+#scam {
+	width: 100px;
+	height: 60px;
+}
+
+@keyframes glow {
+	to {
+		background-color: #CC0000;
+		transform: scale(1.25);
+		font-weight: 900;
+		color: #FFFFFF;
+		border-color: #880000;
+	}
+}
+
+#scam:hover {
+	animation-name: glow;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-direction: normal;
+	animation-fill-mode: forwards;
+}
+
+@keyframes bloom {
+	from {
+		text-shadow: 0 0 20px #8888FF;
+	}
+	to {
+		text-shadow: 0 0 35px #BBBBFF;
+	}
+}
+
+#selector-ref {
+	color: #8888FF;
+	font-weight: 1000;
+	animation: bloom 1s linear infinite alternate;
+}
