@@ -18,6 +18,7 @@ body {
 #container * *:hover {
 	transform: scale(1.05);
 	transform-origin: 0 0;
+	box-shadow: 5px 5px 2px #222222;
 }
 #photo {
 	margin-left: auto;
