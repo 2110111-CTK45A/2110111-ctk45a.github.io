@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JS Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://ntk148v.github.io/iosevkawebfont/latest/iosevka.css" rel="stylesheet" />
+  
+  <meta src="https://kicked-in-teeth.itch.io/button-ui" license="CC-by-sa">
+</head>
+<body>
+  <header class="flashing wipe-enter">
+	<nav>
+      <h1 id="title">JS test</h1>
+	  <a id="home" src="img/button UI.png" href="../index.html"></a>
+	</nav>
+    <p id="subtitle">This page is made to practice js</p>
+  </header>
+  <main>
+    <article class="pretext">
+      <css-doodle class="sigil">
+	    :doodle {
+          @grid: 7 / 8em;
+          @shape: circle;
+        }
+        @even {
+          @shape: hypocycloid 4;
+          background: #60569e;
+          transform: scale(2) rotate(-60deg);
+        }
+	  </css-doodle>
+      <div id="loading"></div>
+	  <css-doodle class="pattern">
+        @grid: 1 / 100vw 100vh;
+        background-size: 83px 135px;
+        background-color: #D24B45;
+        background-image: @doodle(
+          @grid: 2 / 100%;
+          background: @pn(#3C2B34, #F7F0E9, #F7F0E9);
+          transform-origin:
+            @pn(100% 100%, 0 100%, 100% 0, 0 0);
+          transform:
+            rotateX(45deg)
+            skewY(@pn(34deg, -34deg, -34deg));
+        );
+      </css-doodle>
+	</article>
+	<form>
+	  <button id="scam" type="button" onclick="clickHandler()">CLICK THIS FOR FREE MONEY</button>
+	  <button id="date" type="button" onclick="this.innerHTML = Date()">The time is?</button>
+	</form>
+	<form action="">
+	  <label for="minValue">Minimum value:</label>
+	  <input type="text" id="minValue" name="minValue">
+	  <br>
+	  <label for="maxValue">Maximum value:</label>
+	  <input type="text" id="maxValue" name="maxValue">
+	  <br>
+	  <!-- <input type="submit" value="Submit"> -->
+	  <button id="randomize" type="button" onclick="getRandom()">Get random number in range</button>
+	</form>
+	<article class="filler"></article>
+
+
+
+  </main>
+  <footer>
+  </footer>
+  <script type="text/javascript" src="scripts/scripts.js"></script>
+  <script src="https://unpkg.com/css-doodle@0.29.1/css-doodle.min.js"></script>
+</body>
+</html>

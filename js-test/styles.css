@@ -1,0 +1,156 @@
+body {
+	background-color: #000000;
+	font-family:  "Iosevka Web";
+}
+
+header {
+	padding: 20px;
+	border-radius: 10px;
+	position: sticky;
+}
+
+nav {
+	display: flex;
+	align-items: flex-start;
+}
+@keyframes flashing {
+	from {
+		background-color: #EE9933;
+	}
+	to {
+		background-color: #FFBB88;
+	}
+}
+
+.flashing {
+	animation-name: flashing;
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.5,0,0,1);
+	/* animation-delay: 2s; */
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#title {
+	margin: 20px;
+}
+
+#subtitle {
+}
+
+#home {
+	width: 16px;
+	height: 16px;
+	margin: 0px 20px 0px auto;
+	background: url("img/button UI.png") -64px 0;
+}
+
+#home:hover {
+	background: url("img/button UI.png") -64px -144px;
+	transform: scale(2);
+}
+
+main {
+	height: 250px;
+	width: max(80%, 250px);
+	margin: 20px auto;
+	/* display: flex; */
+	/* align-items: center; */
+}
+
+@keyframes loading {
+	0% {
+		transform: none;
+		background-color: #FFFFFF;
+	}
+	50% {
+		transform: rotate3d(1,0.5,0.5,180deg) scale(2);
+		background-color: #DDDDDD;
+	}
+	100%{
+		transform: none;
+		background-color: #BBBBBB;
+	}
+}
+
+#loading {
+	animation-name: loading;
+	animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	backface-visibility: visible;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	margin: 50px;
+	display: inline-block;
+}
+
+#scam {
+	width: 100px;
+	height: 60px;
+}
+
+@keyframes blow {
+	to {
+		background-color: #CC0000;
+		transform: scale(1.25);
+		font-weight: 900;
+		color: #FFFFFF;
+		border-color: #880000;
+	}
+}
+
+form {
+	display: flex;
+	align-items: baseline;
+	background-color: rgba(191,191,191,127);
+	box-shadow: 0 0 10px;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+button {
+	display: inline;
+	font-family:  "Iosevka Web";
+}
+
+button:hover {
+	animation: blow 0.5s linear 1 normal;
+	animation-fill-mode: forwards;
+}
+
+#date {
+	width: 200px;
+}
+
+
+input {
+	width: 64px;
+	margin-right: 20px;
+}
+
+#randomize {
+	margin-left: auto;
+}
+
+.filler {
+	width: 100%;
+	height: 2048px;
+	background-color: #999999;
+}
+
+.pretext {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 80px 80px auto;
+	/* justify-content: space-evenly; */
+}
+.sigil {
+	
+}
+.pattern {
+	width: 100px;
+	height: 100px;
+}

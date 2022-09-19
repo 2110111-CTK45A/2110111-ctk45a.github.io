@@ -46,3 +46,46 @@ li > small {
 .underlined {
 	text-decoration: underline;
 }
+@keyframes rainbow {
+	0% {
+		background-color: #FF0000;
+		color: #00FFFF;
+		transform: rotateX(0deg);
+	}
+	16.66% {
+		background-color: #FFFF00;
+		color: #0000FF;
+	}
+	33.33% {
+		background-color: #00FF00;
+		color: #FF00FF;
+	}
+	50% {
+		background-color: #00FFFF;
+		color: #FF0000;
+	}
+	66.66% {
+		background-color: #0000FF;
+		color: #FFFF00;
+	}
+	75% {
+		background-color: #FF00FF;
+		color: #00FF00;
+	}
+	100% {
+		background-color: #FFFFFF;
+		color: #000000;
+		transform: rotateX(360deg);
+	}
+}
+#css-test {
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	width: 100%;
+	animation-name: rainbow;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
