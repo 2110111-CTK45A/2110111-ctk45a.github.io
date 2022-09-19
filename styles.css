@@ -83,9 +83,5 @@ li > small {
 	text-align: center;
 	padding: 10px;
 	width: 100%;
-	animation-name: rainbow;
-	animation-duration: 3s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+	animation: rainbow 3s linear infinite alternate;
 }
