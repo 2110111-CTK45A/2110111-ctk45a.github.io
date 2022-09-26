@@ -1,0 +1,52 @@
+@font-face {
+	font-family: 'PublicPixel';
+	src: url('fonts/PublicPixel/PublicPixel.woff') format('woff'),
+		 url('fonts/PublicPixel/PublicPixel.ttf')  format('truetype');
+}
+
+.monosodic {
+	background-color: #000000;
+	color: #FFFFFF;
+	/* font-weight: 800; */
+	font-family: 'PublicPixel', sans-serif;
+}
+
+.sticky-top {
+	padding: 20px;
+	border-radius: 10px;
+	position: sticky;
+}
+
+@keyframes flashing {
+	from {
+		background-color: #45AA99;
+	}
+	to {
+		background-color: #34BB11;
+	}
+}
+
+.flashing {
+	/* animation-name: flashing; */
+	/* animation-duration: 1s; */
+	/* animation-timing-function: cubic-bezier(0.5,0,0,1); */
+	/* animation-iteration-count: infinite; */
+	/* animation-direction: alternate; */
+	animation: flashing 1s cubic-bezier(0.5,0,0,1) infinite alternate;
+}
+
+.navbar {
+	display: flex;
+	align-items: flex-start;
+}
+
+.big {
+	/* font-weight: 1000; */
+	font-size: 48pt;
+	margin: 0 0 12pt;
+}
+
+.small {
+	font-size: 10pt;
+	margin: 0;
+}

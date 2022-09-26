@@ -56,3 +56,19 @@ h1:hover, h2:hover {
 	grid-template-columns: 1fr 300px;
 	justify-content: start;
 }
+
+.animated {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	animation-delay: 0.1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
