@@ -116,12 +116,12 @@ function setBasic() {
 	});
 	
 	document.getElementById('header').addEventListener("mouseover", function(){
-		if (window.scrollY !== 0) {
+		if (window.scrollY !== 0 || document.getElementById('header').Animation.playState === 'running') {
 			highlightHeader();
 		};
 	});
 	document.getElementById('header').addEventListener("mouseout", function(){
-		if (window.scrollY !== 0) {
+		if (window.scrollY !== 0 || document.getElementById('header').Animation.playState === 'running') {
 			dehighlightHeader();
 		};
 	});
