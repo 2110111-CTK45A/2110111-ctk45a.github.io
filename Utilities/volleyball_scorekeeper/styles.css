@@ -1,0 +1,157 @@
+body {
+	background-color: #000000;
+	font-family:  "Iosevka Web";
+}
+
+header {
+	padding: 20px;
+	border-radius: 10px;
+	position: sticky;
+}
+
+nav {
+	display: flex;
+	align-items: flex-start;
+}
+@keyframes flashing {
+	from {
+		background-color: #EEAA66;
+	}
+	to {
+		background-color: #9999BB;
+	}
+}
+
+.flashing {
+	animation: 3s linear infinite alternate flashing;
+}
+
+#title {
+	margin: 20px;
+}
+
+#subtitle {
+	
+}
+
+#home {
+	width: 16px;
+	height: 16px;
+	margin: 0px 20px 0px auto;
+	background: url("img/button UI.png") -64px 0;
+	transform-origin: top right;
+}
+
+#home:hover {
+	background: url("img/button UI.png") -64px -144px;
+	transform: scale(2);
+}
+
+main {
+	/* height: 250px; */
+	width: max(80%, 250px);
+	margin: 20px auto;
+	background-image: linear-gradient(135deg, #564231, #932818);
+	border-radius: 20px;
+}
+
+.flex-container {
+	display: flex;
+	gap: 20px;
+	padding: 20px;
+	margin: 20px 100px;
+	align-items: center;
+	justify-content: center;
+}
+
+.left-team {
+	background-color: #FF0000;
+	border-color: #880000;
+}
+
+.right-team {
+	background-color: #0000FF;
+	border-color: #000088;
+}
+
+.glowing {
+	box-shadow: 0 0 20px #FFFFFF;
+}
+
+.current-point {
+	width: 50%;
+	/* height: 56pt; */
+	font-size: 48pt;
+	color: #FFFFFF;
+	vertical-align: middle;
+	margin: 0 40px;
+	border-radius: 20px;
+}
+
+.set-score {
+	background-color: #BBBBBB;
+	box-sizing: border-box;
+	color: #000000;
+}
+
+.scoreboard {
+	display: flex;
+	padding: 20px;
+	margin: 20px 100px;
+}
+.scoreboard > tbody {
+	width: 100%;
+}
+.scoreboard > tbody > tr {
+	display: grid;
+	width: 100%;
+	height: 28pt;
+	/* gap: 5px; */
+	grid-template: none / 40% 20% 20% 20%;
+}
+.scoreboard > tbody > tr > td {
+	margin: 2px;
+	border: 1px solid #666666;
+	font-size: 16pt;
+	text-align: center;
+}
+
+.team-name {
+	background-color: rgba(0,0,0,0);
+	width: 100%;
+	height: 100%;
+	border: 0;
+	outline: none;
+	font-size: 16pt;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.reverse-order {
+	flex-direction: row-reverse;
+}
+
+.switch-button {
+	font-size: 13pt;
+	font-weight: 1000;
+}
+.switch-button-container {
+	display: flex;
+	/* padding: 20px; */
+	align-items: center;
+	justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+	#title {
+		margin: 0 0 0 20px; 
+		font-size: 12pt;
+	}
+	#subtitle {
+		margin: 0;
+		font-size: 10pt;
+	}
+	#home {
+		margin-right: 5px;
+	}
+}
