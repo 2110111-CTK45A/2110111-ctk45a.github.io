@@ -48,7 +48,7 @@ function reset() {
 	}
 	setNumber = 1;
 	alreadySwitched = false;
-	document.getElementById("switch-button").innerHTML = "SwitchSides";
+	document.getElementById("switch-button").innerHTML = "Switch Sides";
 	document.getElementById("switch-button").addEventListener("click", switchSides);
 	document.getElementById("left-team-button").disabled = false;
 	document.getElementById("right-team-button").disabled = false;
