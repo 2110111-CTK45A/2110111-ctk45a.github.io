@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Volleyball Scorekeeper</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://ntk148v.github.io/iosevkawebfont/latest/iosevka.css" rel="stylesheet" />
+  <meta src="https://kicked-in-teeth.itch.io/button-ui" license="CC-by-sa">
+</head>
+<body>
+  <header class="flashing">
+	<nav>
+      <h1 id="title">Volleyball Scorekeeper</h1>
+	  <a id="home" src="img/button UI.png" href="../index.html"></a>
+	</nav>
+    <p id="subtitle">The vital utility for a volleyball judge</p>
+  </header>
+  <main>
+    <div id="current-point-container" class="flex-container">
+	  <button id="left-team-button" class="current-point left-team" type="button">0</button>
+	  <button id="right-team-button" class="current-point right-team" type="button">0</button>
+	</div>
+	<div class="switch-button-container">
+	  <button id="switch-button" class="switch-button" type="button">Switch Sides</button>
+	</div>
+    <table class="scoreboard">
+	  <tbody>
+	    <tr>
+		  <td class="left-team">
+			<input type="text" id="left-team-name" name="left-team-name" class="team-name" placeholder="Team 1">
+		  </td>
+		  <td id="left-team-set-1" class="set-score"></td>
+		  <td id="left-team-set-2" class="set-score"></td>
+		  <td id="left-team-set-3" class="set-score"></td>
+		</tr>
+	    <tr>
+		  <td class="right-team">
+		    <input type="text" id="right-team-name" name="right-team-name" class="team-name" placeholder="Team 2">
+		  </td>
+		  <td id="right-team-set-1" class="set-score"></td>
+		  <td id="right-team-set-2" class="set-score"></td>
+		  <td id="right-team-set-3" class="set-score"></td>
+		</tr>
+	  </tbody>
+	</table>
+  </main>
+  <footer>
+  </footer>
+  
+  <script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>
