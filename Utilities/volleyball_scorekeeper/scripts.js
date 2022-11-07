@@ -1,8 +1,35 @@
 let setNumber = 1;
 let alreadySwitched = false;
+const actionStack = [];
 
 function increment(id) {
 	document.getElementById(id).innerHTML = parseInt(document.getElementById(id).innerHTML) + 1;
+	actionStack.push(id);
+}
+
+function undo() {
+	if (actionStack.length > 0) {
+		const id = actionStack.pop();
+		document.getElementById(id).innerHTML = parseInt(document.getElementById(id).innerHTML) - 1;
+		if (actionStack[actionStack.length - 1] != id) {
+			switch (id) {
+				case "left-team-button": {
+					makeGlow("right");
+					break;
+				}
+				case "right-team-button": {
+					makeGlow("left");
+					break;
+				}
+				default: {
+					break;
+				}
+			}
+		}
+	}
+	if (document.getElementById("left-team-button").innerHTML == 0 && document.getElementById("right-team-button").innerHTML == 0) {
+		makeGlow("clear");
+	}
 }
 
 function endSet() {
@@ -11,7 +38,6 @@ function endSet() {
 	if (setNumber !== 3) {
 		if (leftScore >= 25 || rightScore >= 25) {
 			announce();
-			switchSides();
 		}
 	} else {
 		if ((leftScore === 8 || rightScore === 8) && !alreadySwitched) {
@@ -26,12 +52,14 @@ function endSet() {
 }
 
 function endMatch() {
+	actionStack.length = 0;
 	document.getElementById("left-team-button").innerHTML = document.getElementById("left-team-set-3").innerHTML;
 	document.getElementById("right-team-button").innerHTML = document.getElementById("right-team-set-3").innerHTML;
 	document.getElementById("left-team-button").disabled = true;
 	document.getElementById("right-team-button").disabled = true;
 	document.getElementById("left-team-name").disabled = true;
 	document.getElementById("right-team-name").disabled = true;
+	document.getElementById("undo-button").style.display = "none";
 	document.getElementById("switch-button").removeEventListener("click", switchSides);
 	document.getElementById("switch-button").innerHTML = "Reset";
 	document.getElementById("switch-button").addEventListener("click", reset);
@@ -54,10 +82,13 @@ function reset() {
 	document.getElementById("right-team-button").disabled = false;
 	document.getElementById("left-team-name").disabled = false;
 	document.getElementById("right-team-name").disabled = false;
+	document.getElementById("undo-button").style.display = "flex";
 }
 
 function announce() {
 	if (Math.abs(leftScore - rightScore) >= 2) {
+		switchSides();
+		actionStack.length = 0;
 		if (leftScore > rightScore) {
 			if (document.getElementById('left-team-name').value.length === 0) {
 				alert(`${document.getElementById('left-team-name').placeholder} won!`);
@@ -113,6 +144,15 @@ function makeGlow(hint) {
 			}
 			break;
 		}
+		case "clear": {
+			if (document.getElementById("left-team-button").classList.contains("glowing")) {
+				document.getElementById("left-team-button").classList.toggle("glowing");
+			}
+			if (document.getElementById("right-team-button").classList.contains("glowing")) {
+				document.getElementById("right-team-button").classList.toggle("glowing");
+			}
+			break;
+		}
 		default: {
 			break;
 		}
@@ -131,6 +171,7 @@ function init() {
 		endSet();
 	});
 	document.getElementById("switch-button").addEventListener("click", switchSides);
+	document.getElementById("undo-button").addEventListener("click", undo);
 }
 
 document.addEventListener("DOMContentLoaded", init);

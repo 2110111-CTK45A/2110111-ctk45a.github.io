@@ -67,11 +67,13 @@ main {
 .left-team {
 	background-color: #FF0000;
 	border-color: #880000;
+	min-width: 150px;
 }
 
 .right-team {
 	background-color: #0000FF;
 	border-color: #000088;
+	min-width: 150px;
 }
 
 .glowing {
@@ -86,6 +88,7 @@ main {
 	vertical-align: middle;
 	margin: 0 40px;
 	border-radius: 20px;
+	/* min-width: 100px; */
 }
 
 .set-score {
@@ -97,7 +100,7 @@ main {
 .scoreboard {
 	display: flex;
 	padding: 20px;
-	margin: 20px 100px;
+	margin: 20px 20px;
 }
 .scoreboard > tbody {
 	width: 100%;
